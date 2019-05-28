@@ -24,7 +24,7 @@ public class PagoController {
 	
 	@RequestMapping(path = "/pagoETC", method = RequestMethod.POST)
 	public String pagoETC(@RequestBody PagoEtcPojo etc) {
-		return pagoEtc.pago(etc.getEtc(),etc.getValor(),etc.getCiudad());
+		return pagoEtc.pago(etc.getEtc(),etc.getValor());
 	}
 
 }

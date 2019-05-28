@@ -28,13 +28,13 @@ public class PagoETC {
 	
 	@WebMethod(action = "pagoEtcEntidad")
 	public void pagoEtcEntidad(Etc etc, Long pago,Ciudad ciudad) {
-		pago(etc,pago,ciudad);
+		pago(etc,pago);
 	}
 	
-	public String pago(Etc etc , Long pago, Ciudad ciudad) {
+	public String pago(Etc etc , Long pago) {
 		try {
 			Gson gson = new Gson();
-			Long percentage = calculatePercentageRules(ciudad.isRural(),etc.getNombre());
+			Long percentage = calculatePercentageRules(etc.getCiudad().isRural(),etc.getNombre());
 			Long value = pago * percentage;
 			if(makePsuRequest(value, etc.getCuentaBancaria())) {
 				Map<String,String> paymap = new HashMap<String,String>();
@@ -58,12 +58,12 @@ public class PagoETC {
 	private Long calculatePercentageRules(Boolean rural, String etc) {
 		Map<String,Long> mapaRural = new HashMap<String, Long>();
 		mapaRural.put("SIMIT", 15L);
-		mapaRural.put("Secretaria Movildiad", 40L);
+		mapaRural.put("Secretaria Movilidiad", 40L);
 		mapaRural.put("Policia Carretera", 40L);
 		
 		Map<String,Long> mapaUrbano = new HashMap<String, Long>();
 		mapaRural.put("SIMIT", 10L);
-		mapaRural.put("Secretaria Movildiad", 80L);
+		mapaRural.put("Secretaria Movilidiad", 80L);
 		mapaRural.put("Policia Carretera", 0L);
 		
 		if(rural) {
