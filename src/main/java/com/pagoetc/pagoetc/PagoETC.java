@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 import com.google.gson.Gson;
 import com.pagoetc.pagoetc.entidades.Pago;
 import com.pagoetc.pagoetc.repositories.PagoRepository;
-import com.pagoetc.pagoetc.wsdl.Ciudad;
 import com.pagoetc.pagoetc.wsdl.EnvioNotificacion;
 import com.pagoetc.pagoetc.wsdl.EnvioNotificacionProxy;
 import com.pagoetc.pagoetc.wsdl.Etc;
@@ -27,7 +26,7 @@ public class PagoETC {
 	PagoRepository pagorepository;
 	
 	@WebMethod(action = "pagoEtcEntidad")
-	public void pagoEtcEntidad(Etc etc, Long pago,Ciudad ciudad) {
+	public void pagoEtcEntidad(Etc etc, Long pago) {
 		pago(etc,pago);
 	}
 	
@@ -35,7 +34,7 @@ public class PagoETC {
 		try {
 			Gson gson = new Gson();
 			Long percentage = calculatePercentageRules(etc.getCiudad().isRural(),etc.getNombre());
-			Long value = pago * percentage;
+			Long value = pago * (percentage/100);
 			if(makePsuRequest(value, etc.getCuentaBancaria())) {
 				Map<String,String> paymap = new HashMap<String,String>();
 				paymap.put("name", etc.getNombre());
@@ -62,9 +61,9 @@ public class PagoETC {
 		mapaRural.put("Policia Carretera", 40L);
 		
 		Map<String,Long> mapaUrbano = new HashMap<String, Long>();
-		mapaRural.put("SIMIT", 10L);
-		mapaRural.put("Secretaria Movilidiad", 80L);
-		mapaRural.put("Policia Carretera", 0L);
+		mapaUrbano.put("SIMIT", 10L);
+		mapaUrbano.put("Secretaria Movilidiad", 80L);
+		mapaUrbano.put("Policia Carretera", 0L);
 		
 		if(rural) {
 			return mapaRural.get(etc);
