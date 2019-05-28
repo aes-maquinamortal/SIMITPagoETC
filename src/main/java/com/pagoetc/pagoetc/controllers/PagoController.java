@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pagoetc.pagoetc.PagoETC;
-import com.pagoetc.pagoetc.wsdl.Etc;
+import com.pagoetc.pagoetc.entidades.PagoEtcPojo;
 
 /**
  * @author miguel
@@ -23,8 +23,8 @@ public class PagoController {
 	private PagoETC pagoEtc;
 	
 	@RequestMapping(path = "/pagoETC", method = RequestMethod.POST)
-	public String pagoETC(@RequestBody Etc etc) {
-		return pagoEtc.pago(etc);
+	public String pagoETC(@RequestBody PagoEtcPojo etc) {
+		return pagoEtc.pago(etc.getEtc(),etc.getValor(),etc.getCiudad());
 	}
 
 }
