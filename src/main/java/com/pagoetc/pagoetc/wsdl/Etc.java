@@ -1,202 +1,305 @@
-//
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.11 
-// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.05.26 a las 09:40:43 PM COT 
-//
-
+/**
+ * Etc.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
 
 package com.pagoetc.pagoetc.wsdl;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class Etc  implements java.io.Serializable {
+    private com.pagoetc.pagoetc.wsdl.Ciudad ciudad;
 
+    private java.lang.String correo;
 
-/**
- * <p>Clase Java para etc complex type.
- * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
- * 
- * <pre>
- * &lt;complexType name="etc"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ciudad" type="{http://notificacion.notificacion.simit.com/}ciudad" minOccurs="0"/&gt;
- *         &lt;element name="correo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="cuentaBancaria" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="numeroDocumento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="tipoDocumento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "etc", propOrder = {
-    "ciudad",
-    "correo",
-    "cuentaBancaria",
-    "nombre",
-    "numeroDocumento",
-    "tipoDocumento"
-})
-public class Etc {
+    private java.lang.String cuentaBancaria;
 
-    protected Ciudad ciudad;
-    protected String correo;
-    protected String cuentaBancaria;
-    protected String nombre;
-    protected String numeroDocumento;
-    protected String tipoDocumento;
+    private java.lang.String nombre;
+
+    private java.lang.String numeroDocumento;
+
+    private java.lang.String tipoDocumento;
+
+    public Etc() {
+    }
+
+    public Etc(
+           com.pagoetc.pagoetc.wsdl.Ciudad ciudad,
+           java.lang.String correo,
+           java.lang.String cuentaBancaria,
+           java.lang.String nombre,
+           java.lang.String numeroDocumento,
+           java.lang.String tipoDocumento) {
+           this.ciudad = ciudad;
+           this.correo = correo;
+           this.cuentaBancaria = cuentaBancaria;
+           this.nombre = nombre;
+           this.numeroDocumento = numeroDocumento;
+           this.tipoDocumento = tipoDocumento;
+    }
+
 
     /**
-     * Obtiene el valor de la propiedad ciudad.
+     * Gets the ciudad value for this Etc.
      * 
-     * @return
-     *     possible object is
-     *     {@link Ciudad }
-     *     
+     * @return ciudad
      */
-    public Ciudad getCiudad() {
+    public com.pagoetc.pagoetc.wsdl.Ciudad getCiudad() {
         return ciudad;
     }
 
-    /**
-     * Define el valor de la propiedad ciudad.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ciudad }
-     *     
-     */
-    public void setCiudad(Ciudad value) {
-        this.ciudad = value;
-    }
 
     /**
-     * Obtiene el valor de la propiedad correo.
+     * Sets the ciudad value for this Etc.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ciudad
      */
-    public String getCorreo() {
+    public void setCiudad(com.pagoetc.pagoetc.wsdl.Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+
+
+    /**
+     * Gets the correo value for this Etc.
+     * 
+     * @return correo
+     */
+    public java.lang.String getCorreo() {
         return correo;
     }
 
-    /**
-     * Define el valor de la propiedad correo.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCorreo(String value) {
-        this.correo = value;
-    }
 
     /**
-     * Obtiene el valor de la propiedad cuentaBancaria.
+     * Sets the correo value for this Etc.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param correo
      */
-    public String getCuentaBancaria() {
+    public void setCorreo(java.lang.String correo) {
+        this.correo = correo;
+    }
+
+
+    /**
+     * Gets the cuentaBancaria value for this Etc.
+     * 
+     * @return cuentaBancaria
+     */
+    public java.lang.String getCuentaBancaria() {
         return cuentaBancaria;
     }
 
-    /**
-     * Define el valor de la propiedad cuentaBancaria.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCuentaBancaria(String value) {
-        this.cuentaBancaria = value;
-    }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Sets the cuentaBancaria value for this Etc.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param cuentaBancaria
      */
-    public String getNombre() {
+    public void setCuentaBancaria(java.lang.String cuentaBancaria) {
+        this.cuentaBancaria = cuentaBancaria;
+    }
+
+
+    /**
+     * Gets the nombre value for this Etc.
+     * 
+     * @return nombre
+     */
+    public java.lang.String getNombre() {
         return nombre;
     }
 
-    /**
-     * Define el valor de la propiedad nombre.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNombre(String value) {
-        this.nombre = value;
-    }
 
     /**
-     * Obtiene el valor de la propiedad numeroDocumento.
+     * Sets the nombre value for this Etc.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param nombre
      */
-    public String getNumeroDocumento() {
+    public void setNombre(java.lang.String nombre) {
+        this.nombre = nombre;
+    }
+
+
+    /**
+     * Gets the numeroDocumento value for this Etc.
+     * 
+     * @return numeroDocumento
+     */
+    public java.lang.String getNumeroDocumento() {
         return numeroDocumento;
     }
 
-    /**
-     * Define el valor de la propiedad numeroDocumento.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNumeroDocumento(String value) {
-        this.numeroDocumento = value;
-    }
 
     /**
-     * Obtiene el valor de la propiedad tipoDocumento.
+     * Sets the numeroDocumento value for this Etc.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param numeroDocumento
      */
-    public String getTipoDocumento() {
+    public void setNumeroDocumento(java.lang.String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+    }
+
+
+    /**
+     * Gets the tipoDocumento value for this Etc.
+     * 
+     * @return tipoDocumento
+     */
+    public java.lang.String getTipoDocumento() {
         return tipoDocumento;
     }
 
+
     /**
-     * Define el valor de la propiedad tipoDocumento.
+     * Sets the tipoDocumento value for this Etc.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param tipoDocumento
      */
-    public void setTipoDocumento(String value) {
-        this.tipoDocumento = value;
+    public void setTipoDocumento(java.lang.String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Etc)) return false;
+        Etc other = (Etc) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.ciudad==null && other.getCiudad()==null) || 
+             (this.ciudad!=null &&
+              this.ciudad.equals(other.getCiudad()))) &&
+            ((this.correo==null && other.getCorreo()==null) || 
+             (this.correo!=null &&
+              this.correo.equals(other.getCorreo()))) &&
+            ((this.cuentaBancaria==null && other.getCuentaBancaria()==null) || 
+             (this.cuentaBancaria!=null &&
+              this.cuentaBancaria.equals(other.getCuentaBancaria()))) &&
+            ((this.nombre==null && other.getNombre()==null) || 
+             (this.nombre!=null &&
+              this.nombre.equals(other.getNombre()))) &&
+            ((this.numeroDocumento==null && other.getNumeroDocumento()==null) || 
+             (this.numeroDocumento!=null &&
+              this.numeroDocumento.equals(other.getNumeroDocumento()))) &&
+            ((this.tipoDocumento==null && other.getTipoDocumento()==null) || 
+             (this.tipoDocumento!=null &&
+              this.tipoDocumento.equals(other.getTipoDocumento())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getCiudad() != null) {
+            _hashCode += getCiudad().hashCode();
+        }
+        if (getCorreo() != null) {
+            _hashCode += getCorreo().hashCode();
+        }
+        if (getCuentaBancaria() != null) {
+            _hashCode += getCuentaBancaria().hashCode();
+        }
+        if (getNombre() != null) {
+            _hashCode += getNombre().hashCode();
+        }
+        if (getNumeroDocumento() != null) {
+            _hashCode += getNumeroDocumento().hashCode();
+        }
+        if (getTipoDocumento() != null) {
+            _hashCode += getTipoDocumento().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Etc.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://notificacion.notificacion.simit.com/", "etc"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ciudad");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ciudad"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://notificacion.notificacion.simit.com/", "ciudad"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("correo");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "correo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cuentaBancaria");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "cuentaBancaria"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nombre");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "nombre"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("numeroDocumento");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "numeroDocumento"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tipoDocumento");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "tipoDocumento"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

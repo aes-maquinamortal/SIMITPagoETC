@@ -3,12 +3,15 @@ package com.pagoetc.pagoetc.entidades;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Pago {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	private Date fecha;
@@ -21,9 +24,8 @@ public class Pago {
 	
 	public Pago() {}
 
-	public Pago(Long id, Date fecha, Double porcentaje, Double valor, String etc) {
+	public Pago(Date fecha, Double porcentaje, Double valor, String etc) {
 		super();
-		this.id = id;
 		this.fecha = fecha;
 		this.porcentaje = porcentaje;
 		this.valor = valor;

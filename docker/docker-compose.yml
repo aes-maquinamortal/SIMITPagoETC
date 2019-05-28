@@ -1,0 +1,24 @@
+version: '2.3'
+services:
+  simit-db:
+    image: mysql:5.7
+    container_name: simit_db
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: 'simit'
+      MYSQL_USER: 'simit'
+      MYSQL_PASSWORD: 'simit'
+      MYSQL_ROOT_PASSWORD: 'admin'
+    expose:
+      - 3306
+  simit-pago:
+    build: .
+    container_name: simit_pago
+    depends_on:
+      - simit-db
+    ports: 
+      - 8082:8082
+networks:
+  default:
+    external:
+      name: simit_network
