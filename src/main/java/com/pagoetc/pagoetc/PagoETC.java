@@ -34,14 +34,14 @@ public class PagoETC {
 		try {
 			Gson gson = new Gson();
 			Long percentage = calculatePercentageRules(etc.getCiudad().isRural(),etc.getNombre());
-			Long value = pago * (percentage/100);
+			Double value = pago.doubleValue() * (percentage.doubleValue()/100);
 			if(makePsuRequest(value, etc.getCuentaBancaria())) {
 				Map<String,String> paymap = new HashMap<String,String>();
 				paymap.put("name", etc.getNombre());
 				paymap.put("paymentValue", value.toString());
 				
 				envioNotification.envioNotificacionUtilidad(etc,"pagoETC", gson.toJson(paymap, HashMap.class));
-				return pagorepository.save(new Pago(new Date(), percentage.doubleValue(), value.doubleValue(), etc.getCorreo())).getId().toString();				
+				return pagorepository.save(new Pago(new Date(), percentage.doubleValue(), value, etc.getCorreo())).getId().toString();				
 			}
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
@@ -50,7 +50,7 @@ public class PagoETC {
 		return null;
 	}
 	
-	private boolean makePsuRequest(Long value, String cuentaBancaria) {
+	private boolean makePsuRequest(double value, String cuentaBancaria) {
 		return true;
 	}
 	
